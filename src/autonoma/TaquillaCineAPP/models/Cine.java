@@ -8,6 +8,6 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author juanb
  */
-public class Nino {
+public class Cine {
     
 }
