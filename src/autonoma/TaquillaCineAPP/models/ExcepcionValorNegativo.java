@@ -8,6 +8,8 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author juanb
  */
-public interface ExcepcionValorNegativo {
-    
+public class ExcepcionValorNegativo extends Exception {
+    public ExcepcionValorNegativo(String mensaje){
+        super(mensaje);
+    }
 }

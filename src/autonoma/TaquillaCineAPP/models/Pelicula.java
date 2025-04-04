@@ -33,8 +33,4 @@ public class Pelicula {
         this.costoBase = costoBase;
     }
     
-    @Override
-    public String toString(){
-    return "Pelicula: "+titulo+" -Costo base: $"+costoBase; 
-    }
 }
