@@ -9,52 +9,42 @@ import java.util.List;
  *
  * @author juanb
  */
-public class Cine {
-    private List<Pelicula> peliculas;
-    private List<Funcion> funciones;
-    private List<Usuario> usuarios;
+class Cine {
+    private ArrayList<Usuario> usuarios;
+    private Cartelera cartelera;
 
     public Cine() {
-        this.peliculas = new ArrayList<>();
-        this.funciones = new ArrayList<>();
-        this.usuarios = new ArrayList<>();
+        usuarios = new ArrayList<Usuario>();
+        cartelera = new Cartelera();
     }
 
-    public void gestionarPeliculas() {
-        // Lógica para gestionar películas (puede conectarse con un IGestorPeliculas)
-        System.out.println("Gestionando películas...");
+    public Factura venderBoletas(Venta venta) {
+        double total = venta.calcularTotal();
+        return new Factura(total);
     }
 
-    public void gestionarUsuarios() {
-        // Lógica para gestionar usuarios (puede conectarse con un IGestorUsuarios)
-        System.out.println("Gestionando usuarios...");
+    public void agregarUsuario(Usuario usuario) {
+        usuarios.add(usuario);
     }
 
-    public Factura realizarVenta(List<Boleta> boletas) {
-        Factura factura = new Factura();
-        for (Boleta b : boletas) {
-            try {
-                b.calcularCostoFinal();
-                factura.agregarBoleta(b);
-            } catch (ExcepcionValorNegativo e) {
-                System.out.println("Error en boleta: " + e.getMessage());
-            }
-        }
-        factura.calcularTotal();
-        return factura;
+    public void eliminarUsuario(Usuario usuario) {
+        usuarios.remove(usuario);
     }
 
-    // Métodos adicionales para acceder a las listas (opcional)
-    public List<Pelicula> getPeliculas() {
-        return peliculas;
-    }
-
-    public List<Funcion> getFunciones() {
-        return funciones;
-    }
-
-    public List<Usuario> getUsuarios() {
+    public ArrayList<Usuario> listarUsuarios() {
         return usuarios;
+    }
+
+    public void agregarPelicula(Pelicula pelicula) {
+        cartelera.agregarPelicula(pelicula);
+    }
+
+    public void eliminarPelicula(Pelicula pelicula) {
+        cartelera.eliminarPelicula(pelicula);
+    }
+
+    public ArrayList<Pelicula> listarPeliculas() {
+        return cartelera.listarPeliculas();
     }
 }
 
