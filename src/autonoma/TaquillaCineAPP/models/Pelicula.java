@@ -8,29 +8,28 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author juanb
  */
-public class Pelicula {
-    private String titulo;
-    private double costoBase;
+class Pelicula {
+    private String nombre;
+    private float costoBase;
 
-    public Pelicula(String titulo, double costoBase) {
-        this.titulo = titulo;
+    public Pelicula(String nombre, float costoBase) {
+        this.nombre = nombre;
         this.costoBase = costoBase;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public double getCostoBase() {
+    public float getCostoBase() {
         return costoBase;
     }
 
-    public void setCostoBase(double costoBase) {
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCostoBase(float costoBase) {
         this.costoBase = costoBase;
     }
-    
 }
