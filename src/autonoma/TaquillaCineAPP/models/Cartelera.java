@@ -4,10 +4,28 @@
  */
 package autonoma.TaquillaCineAPP.models;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author marti
  */
-public class Cartelera {
-    
+class Cartelera {
+    private ArrayList<Pelicula> peliculas;
+
+    public Cartelera() {
+        peliculas = new ArrayList<Pelicula>();
+    }
+
+    public void agregarPelicula(Pelicula pelicula) {
+        peliculas.add(pelicula);
+    }
+
+    public void eliminarPelicula(Pelicula pelicula) {
+        peliculas.remove(pelicula);
+    }
+
+    public ArrayList<Pelicula> listarPeliculas() {
+        return peliculas;
+    }
 }
