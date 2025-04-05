@@ -8,6 +8,12 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author marti
  */
-public class Adulto {
-    
+class Adulto extends Usuario {
+    public Adulto(String nombre) {
+        super(nombre);
+    }
+
+    public double calcularPorcentajeDescuento() {
+        return 0.0;
+    }
 }
