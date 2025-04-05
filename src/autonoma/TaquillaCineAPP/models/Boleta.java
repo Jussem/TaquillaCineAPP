@@ -4,6 +4,8 @@
  */
 package autonoma.TaquillaCineAPP.models;
 
+import autonoma.TaquillaCineAPP.Exception.PrecioNegativoException;
+
 /**
  *
  * @author juanb
@@ -22,16 +24,18 @@ class Boleta {
     }
 
     public double calcularPrecio() {
-        double base = pelicula.getCostoBase();
-        double descuentoFuncion = base * funcion.calcularPorc();
-        double descuentoUsuario = usuario.calcularPorcentajeDescuento();
-        double precio = base - descuentoFuncion - descuentoUsuario;
-        if (precio < 0) {
-            return 0.0;
-        } else {
-            return precio;
-        }
+    double base = pelicula.getCostoBase();
+    double descuentoFuncion = base * funcion.calcularPorc();
+    double descuentoUsuario = usuario.calcularPorcentajeDescuento();
+    double precio = base - descuentoFuncion - descuentoUsuario;
+    
+    if (precio < 0) {
+        throw new PrecioNegativoException();
     }
+    
+    return precio;
+}
+
 
     public String mostrarDetalle() {
         return "Boleta - Película: " + pelicula.getNombre() + ", Usuario: " + usuario.getNombre() + ", Precio Final: $" + precioFinal;
