@@ -8,47 +8,36 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author juanb
  */
-public class Boleta {
+class Boleta {
     private Pelicula pelicula;
     private Funcion funcion;
     private Usuario usuario;
-    private double costoFinal;
+    private double precioFinal;
 
-    public Boleta(Pelicula pelicula, Funcion funcion, Usuario usuario, double costoFinal) {
+    public Boleta(Pelicula pelicula, Funcion funcion, Usuario usuario) {
         this.pelicula = pelicula;
         this.funcion = funcion;
         this.usuario = usuario;
-        this.costoFinal = costoFinal;
+        this.precioFinal = calcularPrecio();
     }
-    
-    public double calcularCostoFinal() throws ExcepcionValorNegativo{
-    double costoBase = pelicula.getCostoBase();
-        double descuentoFuncion = funcion.getDescuento();
-        double descuentoUsuario = usuario.getTipo().getDescuento();
-        
-        costoFinal = costoBase - descuentoFuncion * costoBase - descuentoUsuario;
 
-        if (costoFinal < 0) {
-            throw new ExcepcionValorNegativo("El costo final no puede ser negativo.");
+    public double calcularPrecio() {
+        double base = pelicula.getCostoBase();
+        double descuentoFuncion = base * funcion.calcularPorc();
+        double descuentoUsuario = usuario.calcularPorcentajeDescuento();
+        double precio = base - descuentoFuncion - descuentoUsuario;
+        if (precio < 0) {
+            return 0.0;
+        } else {
+            return precio;
         }
-
-        return costoFinal; 
     }
 
-    public double getCostoFinal() {
-        return costoFinal;
+    public String mostrarDetalle() {
+        return "Boleta - Película: " + pelicula.getNombre() + ", Usuario: " + usuario.getNombre() + ", Precio Final: $" + precioFinal;
     }
 
-    public Pelicula getPelicula() {
-        return pelicula;
+    public double getPrecioFinal() {
+        return precioFinal;
     }
-
-    public Funcion getFuncion() {
-        return funcion;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-    
 }
