@@ -8,6 +8,12 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author marti
  */
-public class FuncionTarde {
-    
+class FuncionTarde extends Funcion {
+    public FuncionTarde() {
+        super(0.1);
+    }
+
+    public double calcularPorc() {
+        return getPorcentajeDescuento();
+    }
 }

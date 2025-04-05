@@ -8,6 +8,12 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author marti
  */
-public class PrimeraFuncion {
-    
+class PrimeraFuncion extends Funcion {
+    public PrimeraFuncion() {
+        super(0.5);
+    }
+
+    public double calcularPorc() {
+        return getPorcentajeDescuento();
+    }
 }
