@@ -8,30 +8,20 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author juanb
  */
-public class Usuario {
+public abstract class Usuario {
     private String nombre;
-   private TipoUsuario tipo;
 
-    public Usuario(String nombre, TipoUsuario tipo) {
+    public Usuario(String nombre) {
         this.nombre = nombre;
-        this.tipo = tipo;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public TipoUsuario getTipo() {
-        return tipo;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setTipo(TipoUsuario tipo) {
-        this.tipo = tipo;
-    }
-   
-   
+    public abstract double calcularPorcentajeDescuento();
 }
