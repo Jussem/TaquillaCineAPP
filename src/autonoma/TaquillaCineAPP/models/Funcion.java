@@ -8,30 +8,21 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author juanb
  */
-public class Funcion {
-    private String nombre;
-    private double descuento;
+public abstract class Funcion {
+    private double porcentajeDescuento;
 
-    public Funcion(String nombre, double descuento) {
-        this.nombre = nombre;
-        this.descuento = descuento;
+    public Funcion(double porcentajeDescuento) {
+        this.porcentajeDescuento = porcentajeDescuento;
     }
 
-    public double getDescuento() {
-        return descuento;
+    public double getPorcentajeDescuento() {
+        return porcentajeDescuento;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setPorcentajeDescuento(double porcentajeDescuento) {
+        this.porcentajeDescuento = porcentajeDescuento;
     }
 
-    public void setDescuento(double descuento) {
-        this.descuento = descuento;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
-    
+    public abstract double calcularPorc();
 }
+
