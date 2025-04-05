@@ -8,6 +8,28 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author juanb
  */
-public interface Venta {
-    
+import java.util.ArrayList;
+
+class Venta {
+    private ArrayList<Boleta> boletas;
+
+    public Venta() {
+        boletas = new ArrayList<Boleta>();
+    }
+
+    public void agregarBoleta(Boleta boleta) {
+        boletas.add(boleta);
+    }
+
+    public float calcularTotal() {
+        float total = 0;
+        for (Boleta boleta : boletas) {
+            total += boleta.getPrecioFinal();
+        }
+        return total;
+    }
+
+    public ArrayList<Boleta> getBoletas() {
+        return boletas;
+    }
 }

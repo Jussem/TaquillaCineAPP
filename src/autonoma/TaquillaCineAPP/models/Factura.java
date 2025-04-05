@@ -10,44 +10,19 @@ import java.util.ArrayList;
  *
  * @author juanb
  */
-public class Factura {
-    private List<Boleta> boletas;
+class Factura {
     private double total;
 
-    public Factura() {
-        this.boletas = new ArrayList<>();
+    public Factura(double total) {
+        this.total = total;
     }
 
-    public void agregarBoleta(Boleta boleta) {
-        boletas.add(boleta);
-    }
-
-    public double calcularTotal() {
-        total = 0;
-        for (Boleta b : boletas) {
-            total += b.getCostoFinal();
+    public String generarFactura(Venta venta) {
+        String detalle = "--- FACTURA ---\n";
+        for (Boleta boleta : venta.getBoletas()) {
+            detalle += boleta.mostrarDetalle() + "\n";
         }
-        return total;
-    }
-
-    public String generarDetalle() {
-        StringBuilder detalle = new StringBuilder("Detalle de Factura:\n");
-        for (Boleta b : boletas) {
-            detalle.append("Pelicula: ").append(b.getPelicula().getTitulo())
-                   .append(" | Funcion: ").append(b.getFuncion().getNombre())
-                   .append(" | Usuario: ").append(b.getUsuario().getNombre())
-                   .append(" | Costo: ").append(b.getCostoFinal())
-                   .append("\n");
-        }
-        detalle.append("Total: ").append(total);
-        return detalle.toString();
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public List<Boleta> getBoletas() {
-        return boletas;
+        detalle += "Total a pagar: $" + venta.calcularTotal();
+        return detalle;
     }
 }
