@@ -5,6 +5,7 @@
 package autonoma.TaquillaCineAPP.models;
 
 import autonoma.TaquillaCineAPP.Exception.PeliculaNoEncontradaException;
+import java.util.List;
 
 /**
  *
@@ -35,10 +36,20 @@ class Pelicula {
         this.costoBase = costoBase;
     }
     
-    public void eliminarPelicula(Pelicula pelicula) {
-    if (!pelicula.contains(pelicula)) {
+    public void eliminarPelicula(List<Pelicula> listaPeliculas) {
+    boolean encontrada = false;
+
+    for (Pelicula p : listaPeliculas) {
+        if (p.getNombre().equalsIgnoreCase(this.nombre)) {
+            listaPeliculas.remove(p);
+            encontrada = true;
+            break;
+        }
+    }
+
+    if (!encontrada) {
         throw new PeliculaNoEncontradaException();
     }
-    pelicula.remove(pelicula);
 }
+
 }
