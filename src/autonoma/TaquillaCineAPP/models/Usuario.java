@@ -5,6 +5,7 @@
 package autonoma.TaquillaCineAPP.models;
 
 import autonoma.TaquillaCineAPP.Exception.UsuarioNoRegistradoException;
+import java.util.ArrayList;
 
 /**
  *
@@ -25,13 +26,22 @@ public abstract class Usuario {
         this.nombre = nombre;
     }
 
-    public void eliminarUsuario(Usuario usuario) {
-    if (!usuario.contains(usuario)) {
+    public void eliminarUsuario(ArrayList<Usuario> listaUsuarios) {
+    boolean encontrado = false;
+
+    for (Usuario u : listaUsuarios) {
+        if (u.getNombre().equalsIgnoreCase(this.getNombre())) {
+            listaUsuarios.remove(u);
+            encontrado = true;
+            break;
+        }
+    }
+
+    if (!encontrado) {
         throw new UsuarioNoRegistradoException();
     }
-    usuario.remove(usuario);
 }
-    
+
     public abstract double calcularPorcentajeDescuento();
 }
 
