@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/Boleta.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/TipoUsuario.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/GestorUsuarios.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/Funcion.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/GestorPeliculas.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/ExcepcionValorNegativo.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/Factura.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/Pelicula.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/Cine.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/Venta.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/Usuario.java</file>
+            <file>file:/C:/Users/juanb/Desktop/UAM/POO2/TaquillaCineAPP/src/autonoma/TaquillaCineAPP/models/Taquillero.java</file>
+        </group>
     </open-files>
 </project-private>

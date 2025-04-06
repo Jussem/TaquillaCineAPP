@@ -4,6 +4,8 @@
  */
 package autonoma.TaquillaCineAPP.models;
 
+import autonoma.TaquillaCineAPP.Exception.PeliculaNoEncontradaException;
+
 /**
  *
  * @author juanb
@@ -32,4 +34,11 @@ class Pelicula {
     public void setCostoBase(float costoBase) {
         this.costoBase = costoBase;
     }
+    
+    public void eliminarPelicula(Pelicula pelicula) {
+    if (!pelicula.contains(pelicula)) {
+        throw new PeliculaNoEncontradaException();
+    }
+    pelicula.remove(pelicula);
+}
 }

@@ -4,17 +4,19 @@
  */
 package autonoma.TaquillaCineAPP.models;
 
+import autonoma.TaquillaCineAPP.Exception.UsuarioNoRegistradoException;
+
 /**
  *
  * @author juanb
  */
 public abstract class Usuario {
     private String nombre;
-
+    
     public Usuario(String nombre) {
         this.nombre = nombre;
     }
-
+    
     public String getNombre() {
         return nombre;
     }
@@ -23,5 +25,13 @@ public abstract class Usuario {
         this.nombre = nombre;
     }
 
+    public void eliminarUsuario(Usuario usuario) {
+    if (!usuario.contains(usuario)) {
+        throw new UsuarioNoRegistradoException();
+    }
+    usuario.remove(usuario);
+}
+    
     public abstract double calcularPorcentajeDescuento();
 }
+
