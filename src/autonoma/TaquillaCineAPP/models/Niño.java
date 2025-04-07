@@ -8,7 +8,7 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author marti
  */
-class Niño extends Usuario {
+public class Niño extends Usuario {
     public Niño(String nombre) {
         super(nombre);
     }

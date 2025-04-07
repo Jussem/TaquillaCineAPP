@@ -16,7 +16,7 @@ package autonoma.TaquillaCineAPP.models;
  * @since 1.0
  * @see Funcion
  */
-class FuncionNoche extends Funcion {
+public class FuncionNoche extends Funcion {
 
     /**
      * Crea una función nocturna sin descuento (0%).

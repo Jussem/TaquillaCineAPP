@@ -13,7 +13,7 @@ package autonoma.TaquillaCineAPP.models;
  * @since 1.0
  * @see Usuario
  */
-class Adulto extends Usuario {
+public class Adulto extends Usuario {
 
     /**
      * Crea un nuevo usuario adulto con el nombre especificado.

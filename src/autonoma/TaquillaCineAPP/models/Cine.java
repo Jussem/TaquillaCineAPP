@@ -18,7 +18,7 @@ import java.util.List;
  * @see Venta
  * @see Factura
  */
-class Cine {
+public class Cine {
 
     /** Lista de usuarios registrados en el cine */
     private ArrayList<Usuario> usuarios;

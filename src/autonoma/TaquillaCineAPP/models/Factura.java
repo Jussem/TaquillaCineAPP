@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @see Venta
  * @see Boleta
  */
-class Factura {
+public class Factura {
 
     /** Total a pagar registrado en la factura */
     private double total;

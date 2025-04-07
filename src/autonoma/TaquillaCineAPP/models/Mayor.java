@@ -8,7 +8,7 @@ package autonoma.TaquillaCineAPP.models;
  *
  * @author marti
  */
-class Mayor extends Usuario {
+public class Mayor extends Usuario {
     public Mayor(String nombre) {
         super(nombre);
     }

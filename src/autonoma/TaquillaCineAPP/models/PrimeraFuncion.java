@@ -15,7 +15,7 @@ package autonoma.TaquillaCineAPP.models;
  * @since 1.0
  * @see Funcion
  */
-class PrimeraFuncion extends Funcion {
+public class PrimeraFuncion extends Funcion {
 
     /**
      * Crea una función correspondiente a la primera del día,

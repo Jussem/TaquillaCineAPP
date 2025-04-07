@@ -18,7 +18,7 @@ import autonoma.TaquillaCineAPP.Exception.PrecioNegativoException;
  * @see Funcion
  * @see Usuario
  */
-class Boleta {
+public class Boleta {
 
     /** Película asociada a la boleta */
     private Pelicula pelicula;
@@ -72,7 +72,7 @@ class Boleta {
      * @return Detalle en formato legible para el usuario.
      */
     public String mostrarDetalle() {
-        return "Boleta - Película: " + pelicula.getNombre()
+        return "Boleta - Pelicula: " + pelicula.getNombre()
              + ", Usuario: " + usuario.getNombre()
              + ", Precio Final: $" + precioFinal;
     }

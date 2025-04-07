@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @since 1.0
  * @see Pelicula
  */
-class Cartelera {
+public class Cartelera {
 
     /** Lista de películas disponibles en la cartelera */
     private ArrayList<Pelicula> peliculas;

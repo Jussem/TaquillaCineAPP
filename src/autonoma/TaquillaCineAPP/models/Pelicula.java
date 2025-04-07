@@ -17,7 +17,7 @@ import java.util.List;
  * @since 1.0
  * @see PeliculaNoEncontradaException
  */
-class Pelicula {
+public class Pelicula {
 
     /** Nombre de la película */
     private String nombre;

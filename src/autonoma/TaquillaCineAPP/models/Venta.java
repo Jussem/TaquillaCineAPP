@@ -16,7 +16,7 @@ package autonoma.TaquillaCineAPP.models;
  */
 import java.util.ArrayList;
 
-class Venta {
+public class Venta {
 
     /** Lista de boletas incluidas en la venta */
     private ArrayList<Boleta> boletas;
